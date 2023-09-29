@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ServiceController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,4 +20,5 @@ Route::prefix('admin')->group(function () {
     Route::get('/analytics', [HomeController::class, 'dashboard'])->name('dashboard');
 
     Route::get('/users', [UserController::class, 'index'] );
+    Route::get('/services', [ServiceController::class, 'index'] );
 });
